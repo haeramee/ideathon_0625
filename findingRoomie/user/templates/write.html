@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>프로필 만들기</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1>내 정보</h1>
+        <h3>개인 정보</h3>
+        <p>이름: <input type="text" name="name"></p>
+        <p>별명: <input type="text" name="nickname"></p>
+        <p>성별: 
+            <input type="radio" name="gender_m" value="male" checked> 남자 
+            <input type="radio" name="gender_f" value="female"> 여자
+        </p>
+        <p>나이: <input type="number" name="age" min="2" max="130" step="1" value="20"></p>
+        <p>전공: 
+            <select name="major">
+                <option value="글로벌경제학과" selected>글로벌경제학과</option>
+                <option value="글로벌경영학과">글로벌경영학과</option>
+                <option value="글로벌리더학과">글로벌리더학과</option>
+                <option value="컴퓨터공학과">컴퓨터공학과</option>
+              </select>
+        </p>
+        <p>학번: <input type="text" name="studentID"></p>
+        <hr>
+        <h3>간단한 자기 소개</h3>
+        <p>한 줄 자기소개: <input type="text" name="introduction"></p>
+        <p>프로필 사진: 
+            <input type="file" accept="*.image, *.jpeg, *.png" name="profile_img"> 
+            <input type="submit" value="Submit">
+        </p>
+        <hr>
+        <h3>나의 생활 습관</h3>
+        <p>취침 시간: <input type="time" name="sleep_time"></p>
+        <p>청결도: 
+            <select name="cleanliness">
+                <option value="very_clean" selected>일주일에 2번 이상</option>
+                <option value="clean">일주일에 1번</option>
+                <option value="not_very_clean">2주에 1번</option>
+                <option value="unclean">1달에 1번</option>
+              </select>
+        </p>
+        <p>취사 여부: 
+            <select name="cook">
+                <option value="yes" selected>룸메이트와 함께 밥을 해 먹고 싶어요</option>
+                <option value="no">저는 웬만하면 사 먹는게 좋아요</option>
+                <option value="negotiate">요리 못하지만 설거지는 잘 해요</option>
+              </select>
+        </p>
+        <p>흡연 여부: 
+            <input type="radio" name="smoker" value="yes" checked>흡연자<br>
+            <input type="radio" name="nonsmoker" value="no">비흡연자<br>
+        </p>
+        <h3>주거 조건 상세 설정</h3>
+        <p>나의 예산(월세/보증금):  
+            <input type="text" name="rent"> / <input type="text" name="deposit">
+        </p>
+        <p>희망 거주 지역: 
+            <select name="hope_area">
+                <option value="haehwa" selected>혜화동</option>
+                <option value="ewha">이화동</option>
+                <option value="sungbuk">성북동</option>
+                <option value="won_nam">원남동</option>
+                <option value="samsun">삼선동</option>
+              </select>
+        </p>
+    </form>
+</body>

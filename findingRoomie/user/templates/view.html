@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>프로필 만들기</title>
+    <title>내 프로필</title>
 </head>
 <body>
+    <a href="{% url write %}">프로필 수정하러 가기</a>
     <h1>내 정보</h1>
     <h3>개인 정보</h3>
     {% for user in userdic %}
